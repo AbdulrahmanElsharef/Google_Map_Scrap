@@ -15,7 +15,7 @@ class Business:
     address: str = None
     website: str = None
     phone_number: str = None
-    # reviews_count: int = None
+    reviews_count: int = None
     reviews_average: float = None
 
 
@@ -179,17 +179,20 @@ if __name__ == "__main__":
     parser.add_argument("-t", "--total", type=int)
     args = parser.parse_args()
 
-    if args.search:
+    if args.search :
         search_for = args.search
+        
     else:
         # in case no arguments passed
         # the scraper will search by defaukt for:
-        search_for = "dentist new york"
+        search_for = "mobile store in cairo"
+        
 
     # total number of products to scrape. Default is 10
-    if args.total:
+    if  args.total:
         total = args.total
+        
     else:
-        total = 10
+       total = 100 
 
     main()
