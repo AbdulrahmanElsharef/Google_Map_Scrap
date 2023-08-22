@@ -15,7 +15,7 @@ class Business:
     address: str = None
     website: str = None
     phone_number: str = None
-    reviews_count: int = None
+    # reviews_count: int = None
     reviews_average: float = None
 
 
@@ -154,15 +154,15 @@ def main():
                     .replace(",", ".")
                     .strip()
                 )
-                business.reviews_count = int(
-                    listing.locator(reviews_span_xpath)
-                    .get_attribute("aria-label")
-                    .split()[2]
-                    .strip()
-                )
+                # business.reviews_count = float(
+                #     listing.locator(reviews_span_xpath)
+                #     .get_attribute("aria-label")
+                #     .split()[2]
+                #     .strip()
+                # )
             else:
                 business.reviews_average = ""
-                business.reviews_count = ""
+                # business.reviews_count = ""
 
             business_list.business_list.append(business)
 
